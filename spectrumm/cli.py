@@ -27,10 +27,11 @@ FLAGS = {
 
 def read(f, normalized=False):
     """MP3 to numpy array"""
-    a = pydub.AudioSegment.from_mp3(f)
-    y = np.array(a.get_array_of_samples())
+    a = pydub.AudioSegment.from_file(f, f.split(".")[-1])
     if a.channels == 2:
-        y = y.reshape((-1, 2))
+        a = a.set_channels(1)
+        print("Stereo file – converting to Mono: {}".format(os.path.basename(f)))
+    y = np.array(a.get_array_of_samples())
     if normalized:
         return a.frame_rate, np.float32(y) / 2**15
     else:
