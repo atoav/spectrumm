@@ -1,0 +1,10 @@
+README.rst
+setup.py
+spectrumm/__init__.py
+spectrumm/cli.py
+spectrumm.egg-info/PKG-INFO
+spectrumm.egg-info/SOURCES.txt
+spectrumm.egg-info/dependency_links.txt
+spectrumm.egg-info/entry_points.txt
+spectrumm.egg-info/requires.txt
+spectrumm.egg-info/top_level.txt
